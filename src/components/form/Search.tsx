@@ -2,7 +2,12 @@ export default function Search() {
   return (
     <div className="input-group">
       <div className="form-outline">
-        <input className="form-control" type="text" id="search" />
+        <input
+          className="form-control"
+          type="text"
+          id="search"
+          placeholder="Search..."
+        />
         <label className="visually-hidden form-label" htmlFor="search">
           Search
         </label>
