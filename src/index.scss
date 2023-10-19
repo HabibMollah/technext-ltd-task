@@ -1,7 +1,15 @@
-body {
-  margin: auto 24px;
+html {
+  text-align: center;
 
-  * {
-    text-align: center;
+  body {
+    margin: auto 24px;
+
+    form {
+      text-align: left;
+
+      //   input[type='checkbox'] {
+      //     text-align: right;
+      //   }
+    }
   }
 }

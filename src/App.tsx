@@ -1,3 +1,5 @@
+import Form from './components/form';
+
 export default function App() {
   return (
     <main>
@@ -5,6 +7,7 @@ export default function App() {
         <h2>Spaceflight details</h2>
         <p>Find out the elaborate features of all the past big spaceflights.</p>
       </div>
+      <Form />
     </main>
   );
 }
