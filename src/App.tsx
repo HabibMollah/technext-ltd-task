@@ -1,3 +1,10 @@
 export default function App() {
-  return <div>Hello World</div>;
+  return (
+    <main>
+      <div>
+        <h2>Spaceflight details</h2>
+        <p>Find out the elaborate features of all the past big spaceflights.</p>
+      </div>
+    </main>
+  );
 }
