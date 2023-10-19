@@ -1,0 +1,31 @@
+html {
+  text-align: center;
+
+  body {
+    margin: auto 24px;
+
+    form {
+      text-align: left;
+
+      //   input[type='checkbox'] {
+      //     text-align: right;
+      //   }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    body {
+      margin: auto 57px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    body {
+      margin: auto 300px;
+    }
+  }
+}
