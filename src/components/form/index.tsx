@@ -8,21 +8,33 @@ export default function Form() {
         </label>
       </div>
 
-      <input className="form-control" type="text" id="search" />
-      <label className="visually-hidden form-label" htmlFor="search">
-        Search
-      </label>
+      <div className="input-group">
+        <div className="form-outline">
+          <input className="form-control" type="text" id="search" />
+          <label className="visually-hidden form-label" htmlFor="search">
+            Search
+          </label>
+        </div>
 
-      <select className="form-select" aria-label="Sort By Status">
-        <option>By Launch Status</option>
-        <option>By Something Else</option>
-      </select>
+        <button className="btn btn-primary" type="button">
+          <img src="/search-icon.svg" alt="Search Icon" />
+        </button>
+      </div>
 
-      <select className="form-select" aria-label="Sort By Time">
-        <option>By Launch Date</option>
-        <option>Last Week</option>
-        <option>Last Month</option>
-      </select>
+      <div>
+        <select className="form-select" aria-label="Sort By Status">
+          <option>By Launch Status</option>
+          <option>By Something Else</option>
+        </select>
+      </div>
+
+      <div>
+        <select className="form-select" aria-label="Sort By Time">
+          <option>By Launch Date</option>
+          <option>Last Week</option>
+          <option>Last Month</option>
+        </select>
+      </div>
     </form>
   );
 }
