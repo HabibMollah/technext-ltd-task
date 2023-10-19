@@ -1,3 +1,5 @@
+import Search from './Search';
+
 export default function Form() {
   return (
     <form>
@@ -8,18 +10,7 @@ export default function Form() {
         </label>
       </div>
 
-      <div className="input-group">
-        <div className="form-outline">
-          <input className="form-control" type="text" id="search" />
-          <label className="visually-hidden form-label" htmlFor="search">
-            Search
-          </label>
-        </div>
-
-        <button className="btn btn-primary" type="button">
-          <img src="/search-icon.svg" alt="Search Icon" />
-        </button>
-      </div>
+      <Search />
 
       <div>
         <select className="form-select" aria-label="Sort By Status">
