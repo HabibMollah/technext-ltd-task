@@ -12,7 +12,9 @@ html {
       display: grid;
       gap: 24px;
       grid-template-columns: 1fr;
+      justify-items: center;
       list-style: none;
+      padding-left: 0;
     }
 
     li {
@@ -45,7 +47,8 @@ html {
 @media screen and (min-width: 1200px) {
   html {
     body {
-      margin: auto 300px;
+      margin: auto;
+      max-width: 1320px;
 
       ul {
         display: grid;
