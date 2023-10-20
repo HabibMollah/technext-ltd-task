@@ -8,7 +8,7 @@ export default function SpaceflightList() {
   console.log(data, isLoading, isError);
 
   return (
-    <ul className="list-group">
+    <ul className="">
       {data?.map((spaceFlight, index) => (
         // There's no unique id for each spaceflight, so I used the index as the key 🙁
         <SpaceflightCard key={index} spaceFlight={spaceFlight} />

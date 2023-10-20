@@ -6,7 +6,7 @@ type Props = {
 
 export default function SpaceflightCard({ spaceFlight }: Props) {
   return (
-    <li className="list-group-item">
+    <li className="w-100">
       <p>{spaceFlight.mission_name}</p>
       <span
         className={`text-white p-1 rounded-pill fs-6 ${

@@ -6,10 +6,19 @@ html {
 
     form {
       text-align: left;
+    }
 
-      //   input[type='checkbox'] {
-      //     text-align: right;
-      //   }
+    ul {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+      list-style: none;
+    }
+
+    li {
+      max-width: 314px;
+      height: 393.39999px;
+      border: 1px solid #ced4da;
     }
   }
 }
@@ -20,6 +29,15 @@ html {
 
     body {
       margin: auto 57px;
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      li {
+        max-width: 348px;
+      }
     }
   }
 }
@@ -28,6 +46,15 @@ html {
   html {
     body {
       margin: auto 300px;
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      li {
+        max-width: 424px;
+      }
     }
   }
 }
