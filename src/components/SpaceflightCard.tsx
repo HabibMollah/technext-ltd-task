@@ -9,7 +9,7 @@ export default function SpaceflightCard({ spaceFlight }: Props) {
     <li className="w-100">
       <p>{spaceFlight.mission_name}</p>
       <span
-        className={`text-white p-1 rounded-pill fs-6 ${
+        className={`status-pill ${
           spaceFlight.launch_success ? 'bg-success' : 'bg-danger'
         }`}>
         {spaceFlight.launch_success ? 'Success' : 'Failure'}

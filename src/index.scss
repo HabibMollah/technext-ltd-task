@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+
 html {
   text-align: left;
 
   body {
     margin: auto 24px;
+    font-family: 'Barlow', sans-serif;
 
     form {
       text-align: left;
@@ -15,12 +19,22 @@ html {
       justify-items: center;
       list-style: none;
       padding-left: 0;
+      text-align: center;
     }
 
     li {
       max-width: 314px;
       height: 393.39999px;
       border: 1px solid #ced4da;
+      padding: 32px;
+
+      .status-pill {
+        color: white;
+        font-weight: 700;
+        font-family: 'Helvetica Neue', sans-serif;
+        padding: 4.2px 7.8px;
+        border-radius: 4px;
+      }
     }
   }
 }
