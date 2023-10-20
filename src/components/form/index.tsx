@@ -14,14 +14,12 @@ export default function Form() {
         <option>Failure</option>
       </Select>
 
-      <div>
-        <select className="form-select" aria-label="Sort By Time">
-          <option>By Launch Date</option>
-          <option>Last Week</option>
-          <option>Last Month</option>
-          <option>Last Year</option>
-        </select>
-      </div>
+      <Select label="Filter By Time">
+        <option>By Launch Date</option>
+        <option>Last Week</option>
+        <option>Last Month</option>
+        <option>Last Year</option>
+      </Select>
     </form>
   );
 }
