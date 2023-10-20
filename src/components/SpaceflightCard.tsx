@@ -7,7 +7,7 @@ type Props = {
 export default function SpaceflightCard({ spaceFlight }: Props) {
   return (
     <li className="w-100">
-      <p>{spaceFlight.mission_name}</p>
+      <h4>{spaceFlight.mission_name}</h4>
       <span
         className={`status-pill ${
           spaceFlight.launch_success ? 'bg-success' : 'bg-danger'
