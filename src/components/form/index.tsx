@@ -1,28 +1,25 @@
+import Checkbox from './Checkbox';
+import Search from './Search';
+import Select from './Select';
+
 export default function Form() {
   return (
     <form>
-      <div className="form-check">
-        <input className="form-check-input" type="checkbox" id="upcoming" />
-        <label className="form-check-label" htmlFor="upcoming">
-          Show upcoming only
-        </label>
-      </div>
+      <Checkbox />
+      <Search />
 
-      <input className="form-control" type="text" id="search" />
-      <label className="visually-hidden form-label" htmlFor="search">
-        Search
-      </label>
-
-      <select className="form-select" aria-label="Sort By Status">
+      <Select label="Filter by Status">
         <option>By Launch Status</option>
-        <option>By Something Else</option>
-      </select>
+        <option>Success</option>
+        <option>Failure</option>
+      </Select>
 
-      <select className="form-select" aria-label="Sort By Time">
+      <Select label="Filter By Time">
         <option>By Launch Date</option>
         <option>Last Week</option>
         <option>Last Month</option>
-      </select>
+        <option>Last Year</option>
+      </Select>
     </form>
   );
 }
