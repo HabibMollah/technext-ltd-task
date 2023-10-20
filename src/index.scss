@@ -1,5 +1,5 @@
 html {
-  text-align: center;
+  text-align: left;
 
   body {
     margin: auto 24px;
@@ -16,6 +16,8 @@ html {
 
 @media screen and (min-width: 768px) {
   html {
+    text-align: center;
+
     body {
       margin: auto 57px;
     }
