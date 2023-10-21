@@ -10,7 +10,9 @@ export default function SpaceflightCard({ spaceFlight, imgSrc }: Props) {
   return (
     <li className="w-100">
       <img src={imgSrc} alt={`image of ${imgSrc}`} />
-      <p>Launch Date: {formatDate(spaceFlight.launch_date_local)}</p>
+      <p>
+        <span>Launch Date:</span> {formatDate(spaceFlight.launch_date_local)}
+      </p>
       <h4>{spaceFlight.mission_name}</h4>
       <span
         className={`status-pill ${
