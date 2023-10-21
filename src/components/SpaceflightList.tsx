@@ -3,12 +3,12 @@ import useGetData from '../hooks/useGetData';
 import { SpaceFlight } from '../types/SpaceFlight';
 import SpaceflightCard from './SpaceflightCard';
 import Spinner from './Spinner';
+import { Link, useParams } from 'react-router-dom';
 
 export default function SpaceflightList() {
-  const [offset, setOffset] = useState(0);
-  const { data, isLoading, isError } = useGetData<SpaceFlight[]>(offset);
-
-  console.log(data, isLoading, isError);
+  const { page } = useParams();
+  const [currentPage, setCurrentPage] = useState(parseInt(page || '1'));
+  const { data, isLoading, isError } = useGetData<SpaceFlight[]>(currentPage);
 
   const imgSrcList = [
     'falcon-sat.png',
@@ -45,22 +45,22 @@ export default function SpaceflightList() {
         </ul>
 
         <div className="d-flex gap-2 justify-content-center">
-          <button
+          <Link
             className="btn btn-primary"
-            disabled={offset <= 0}
-            onClick={() => {
-              if (offset > 0) setOffset(offset - 9);
-            }}>
+            onClick={() =>
+              setCurrentPage(currentPage <= 1 ? currentPage : currentPage - 1)
+            }
+            to={currentPage <= 1 ? '#' : `/${currentPage - 1}`}>
             Previous
-          </button>
-          <button
+          </Link>
+          <Link
             className="btn btn-primary"
-            disabled={offset >= 108}
-            onClick={() => {
-              if (offset < 108) setOffset(offset + 9);
-            }}>
+            onClick={() =>
+              setCurrentPage(currentPage >= 10 ? currentPage : currentPage + 1)
+            }
+            to={currentPage >= 10 ? '#' : `/${currentPage + 1}`}>
             Next
-          </button>
+          </Link>
         </div>
       </>
     );
