@@ -14,7 +14,7 @@ html {
     font-family: $primary-font;
 
     main > div {
-      margin: 120px auto 104px auto;
+      margin: 48px auto 64px auto;
 
       p {
         color: $secondary-color;
@@ -92,6 +92,10 @@ html {
 
     body {
       margin: auto 57px;
+
+      main > div {
+        margin-top: 120px;
+      }
 
       ul {
         display: grid;
