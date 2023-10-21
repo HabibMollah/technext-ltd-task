@@ -2,9 +2,12 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import baseURL from '../api/baseURL';
 
-export default function useGetData<DataType>() {
+export default function useGetData<DataType>(offset: number) {
   return useQuery<DataType, Error>({
-    queryKey: ['launches'],
-    queryFn: () => axios.get(baseURL).then((res) => res.data),
+    queryKey: ['launches', offset],
+    queryFn: () =>
+      axios
+        .get(baseURL, { params: { offset, limit: 9 } })
+        .then((res) => res.data),
   });
 }
