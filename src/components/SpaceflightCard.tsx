@@ -13,13 +13,19 @@ export default function SpaceflightCard({ spaceFlight, imgSrc }: Props) {
       <p>
         <span>Launch Date:</span> {formatDate(spaceFlight.launch_date_local)}
       </p>
-      <h4>{spaceFlight.mission_name}</h4>
-      <span
-        className={`status-pill ${
-          spaceFlight.launch_success ? 'bg-success' : 'bg-danger'
-        }`}>
-        {spaceFlight.launch_success ? 'Success' : 'Failure'}
-      </span>
+      <div>
+        <h4>{spaceFlight.mission_name}</h4>
+        <p>{spaceFlight.rocket.rocket_name}</p>
+      </div>
+      <div>
+        <p>Launch Status: </p>
+        <span
+          className={`status-pill ${
+            spaceFlight.launch_success ? 'bg-success' : 'bg-danger'
+          }`}>
+          {spaceFlight.launch_success ? 'Success' : 'Failure'}
+        </span>
+      </div>
     </li>
   );
 }
