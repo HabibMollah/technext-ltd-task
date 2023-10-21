@@ -33,6 +33,7 @@ html {
       list-style: none;
       padding-left: 0;
       text-align: center;
+      margin-top: 64px;
     }
 
     li {
@@ -98,7 +99,6 @@ html {
       }
 
       ul {
-        display: grid;
         grid-template-columns: 1fr 1fr;
       }
 
@@ -116,7 +116,6 @@ html {
       max-width: 1320px;
 
       ul {
-        display: grid;
         grid-template-columns: 1fr 1fr 1fr;
       }
 
