@@ -6,10 +6,14 @@ import ThreeDots from './icons/ThreeDots';
 type Props = {
   currentPage: number;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  totalPages: number;
 };
 
-export default function Pagination({ currentPage, setCurrentPage }: Props) {
-  const totalPages = 13;
+export default function Pagination({
+  currentPage,
+  setCurrentPage,
+  totalPages,
+}: Props) {
   const maxVisiblePages = 3;
   const halfVisiblePages = Math.floor(maxVisiblePages / 2);
 
