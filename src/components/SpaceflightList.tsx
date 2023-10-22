@@ -22,13 +22,14 @@ export default function SpaceflightList() {
 
   useEffect(() => {
     if (data) {
-      setPaginatedData(data.slice(offset, 9));
+      setPaginatedData(data.slice(offset, offset + 9));
     }
   }, [data, offset]);
 
   console.log(currentPage);
   console.log(offset);
   console.log(paginatedData);
+  // console.log(data);
 
   const imgSrcList = [
     'falcon-sat.png',
@@ -54,7 +55,7 @@ export default function SpaceflightList() {
     return (
       <>
         <ul className="launch-list">
-          {data?.map((spaceFlight, index) => (
+          {paginatedData?.map((spaceFlight, index) => (
             // There's no unique id for each spaceflight, so I used the index as the key 🙁
             <SpaceflightCard
               key={index}
