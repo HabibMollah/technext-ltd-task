@@ -3,7 +3,7 @@ import useSearchContext from '../../hooks/useSearchContext';
 export default function Search() {
   const { searchValue, setSearchValue } = useSearchContext();
   return (
-    <div className="input-group">
+    <div className="input-group search-bar">
       <input
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
