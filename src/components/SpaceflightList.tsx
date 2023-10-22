@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useGetData from '../hooks/useGetData';
 import { SpaceFlight } from '../types/SpaceFlight';
 import SpaceflightCard from './SpaceflightCard';
@@ -10,7 +10,25 @@ import Pagination from './Pagination';
 export default function SpaceflightList() {
   const { page } = useParams();
   const [currentPage, setCurrentPage] = useState(parseInt(page || '1'));
-  const { data, isLoading, isError } = useGetData<SpaceFlight[]>(currentPage);
+  const { data, isLoading, isError } = useGetData<SpaceFlight[]>();
+  const [offset, setOffset] = useState(0);
+  const [paginatedData, setPaginatedData] = useState<
+    SpaceFlight[] | undefined
+  >();
+
+  useEffect(() => {
+    setOffset(currentPage * 9);
+  }, [currentPage]);
+
+  useEffect(() => {
+    if (data) {
+      setPaginatedData(data.slice(offset, 9));
+    }
+  }, [data, offset]);
+
+  console.log(currentPage);
+  console.log(offset);
+  console.log(paginatedData);
 
   const imgSrcList = [
     'falcon-sat.png',
