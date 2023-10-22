@@ -4,7 +4,6 @@ import { SpaceFlight } from '../types/SpaceFlight';
 import SpaceflightCard from './SpaceflightCard';
 import Spinner from './Spinner';
 import { useParams } from 'react-router-dom';
-
 import Pagination from './Pagination';
 
 export default function SpaceflightList() {
@@ -29,7 +28,7 @@ export default function SpaceflightList() {
   console.log(currentPage);
   console.log(offset);
   console.log(paginatedData);
-  // console.log(data);
+  console.log(data);
 
   console.log(currentPage);
   console.log((currentPage - 1) * 9);
@@ -68,7 +67,11 @@ export default function SpaceflightList() {
           ))}
         </ul>
 
-        <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        <Pagination
+          totalPages={Math.ceil(data.length / 9)}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </>
     );
 }
