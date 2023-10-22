@@ -17,7 +17,7 @@ export default function SpaceflightList() {
   >();
 
   useEffect(() => {
-    setOffset(currentPage * 9);
+    setOffset((currentPage - 1) * 9);
   }, [currentPage]);
 
   useEffect(() => {
