@@ -1,7 +1,12 @@
+import useSearchContext from '../../hooks/useSearchContext';
+
 export default function Search() {
+  const { searchValue, setSearchValue } = useSearchContext();
   return (
     <div className="input-group">
       <input
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
         className="form-control"
         type="text"
         id="search"
