@@ -9,7 +9,7 @@ type Props = {
 };
 
 export default function Pagination({ currentPage, setCurrentPage }: Props) {
-  const totalPages = 10;
+  const totalPages = 13;
   const maxVisiblePages = 3;
   const halfVisiblePages = Math.floor(maxVisiblePages / 2);
 

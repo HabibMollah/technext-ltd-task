@@ -12,6 +12,9 @@ export default function SpaceflightList() {
   const [currentPage, setCurrentPage] = useState(parseInt(page || '1'));
   const { data, isLoading, isError } = useGetData<SpaceFlight[]>(currentPage);
 
+  console.log(currentPage);
+  console.log((currentPage - 1) * 9);
+
   const imgSrcList = [
     'falcon-sat.png',
     'demo-sat.png',
