@@ -3,7 +3,9 @@ import useGetData from '../hooks/useGetData';
 import { SpaceFlight } from '../types/SpaceFlight';
 import SpaceflightCard from './SpaceflightCard';
 import Spinner from './Spinner';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+
+import Pagination from './Pagination';
 
 export default function SpaceflightList() {
   const { page } = useParams();
@@ -33,7 +35,7 @@ export default function SpaceflightList() {
   if (data)
     return (
       <>
-        <ul>
+        <ul className="launch-list">
           {data?.map((spaceFlight, index) => (
             // There's no unique id for each spaceflight, so I used the index as the key 🙁
             <SpaceflightCard
@@ -44,24 +46,7 @@ export default function SpaceflightList() {
           ))}
         </ul>
 
-        <div className="d-flex gap-2 justify-content-center">
-          <Link
-            className="btn btn-primary"
-            onClick={() =>
-              setCurrentPage(currentPage <= 1 ? currentPage : currentPage - 1)
-            }
-            to={currentPage <= 1 ? '#' : `/${currentPage - 1}`}>
-            Previous
-          </Link>
-          <Link
-            className="btn btn-primary"
-            onClick={() =>
-              setCurrentPage(currentPage >= 10 ? currentPage : currentPage + 1)
-            }
-            to={currentPage >= 10 ? '#' : `/${currentPage + 1}`}>
-            Next
-          </Link>
-        </div>
+        <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} />
       </>
     );
 }
