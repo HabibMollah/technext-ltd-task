@@ -6,6 +6,7 @@ import Spinner from './Spinner';
 import { useParams } from 'react-router-dom';
 import Pagination from './Pagination';
 import useSearchContext from '../hooks/useSearchContext';
+import useLaunchStatusContext from '../hooks/useLaunchStatusContext';
 
 const imgSrcList = [
   'falcon-sat.png',
@@ -29,16 +30,52 @@ export default function SpaceflightList() {
     SpaceFlight[] | undefined
   >();
   const { searchValue } = useSearchContext();
+  const { launchStatus } = useLaunchStatusContext();
 
-  // Filter the data
+  // Filter the data by searchValue
   useEffect(() => {
-    if (data && searchValue)
-      setFilteredData(
-        data.filter((spaceFlight) =>
-          spaceFlight.rocket.rocket_name.includes(searchValue)
-        )
-      );
-  }, [data, searchValue]);
+    if (data) {
+      if (searchValue) {
+        if (launchStatus === 'success') {
+          setFilteredData(
+            data
+              .filter((spaceFlight) =>
+                spaceFlight.rocket.rocket_name.includes(searchValue)
+              )
+              .filter((spaceFlight) => spaceFlight.launch_success)
+          );
+        }
+        if (launchStatus === 'failure') {
+          setFilteredData(
+            data
+              .filter((spaceFlight) =>
+                spaceFlight.rocket.rocket_name.includes(searchValue)
+              )
+              .filter((spaceFlight) => !spaceFlight.launch_success)
+          );
+        }
+      } else {
+        if (launchStatus === 'success') {
+          setFilteredData(
+            data.filter((spaceFlight) => spaceFlight.launch_success)
+          );
+        }
+        if (launchStatus === 'failure') {
+          setFilteredData(
+            data.filter((spaceFlight) => !spaceFlight.launch_success)
+          );
+        }
+      }
+
+      if (searchValue && !launchStatus) {
+        setFilteredData(
+          data.filter((spaceFlight) =>
+            spaceFlight.rocket.rocket_name.includes(searchValue)
+          )
+        );
+      }
+    }
+  }, [data, launchStatus, searchValue]);
 
   // Set the offset for pagination
   useEffect(() => {
@@ -48,14 +85,14 @@ export default function SpaceflightList() {
   // Set the visible items in the page
   useEffect(() => {
     if (data) {
-      if (searchValue && filteredData) {
+      if (filteredData) {
         setCurrentPage(1);
         setPaginatedData(filteredData.slice(offset, offset + 9));
       } else {
         setPaginatedData(data.slice(offset, offset + 9));
       }
     }
-  }, [data, filteredData, offset, searchValue]);
+  }, [data, filteredData, offset, searchValue, launchStatus]);
 
   console.log(filteredData);
 
