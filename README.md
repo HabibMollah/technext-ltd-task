@@ -5,4 +5,4 @@
 - run `pnpm install`
 - run `pnpm run dev` to start the dev server
 
-This project is also deployed on Vercel [https://technext-ltd-task.vercel.app](technext-ltd-task.vercel.app)
+This project is also deployed on Vercel [https://technext-ltd-task.vercel.app](https://technext-ltd-task.vercel.app)
